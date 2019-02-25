@@ -25,8 +25,8 @@ Alternatively try the super-useful [CommandBox](https://www.ortussolutions.com/p
 
 ## Getting Help
 
-- [Lucee Documentation Project](https://docs.lucee.org/)
-- [Lucee Google Group](https://groups.google.com/forum/#!forum/lucee); general app developer support
+- [Lucee Documentation Project](http://docs.lucee.org/)
+- [Lucee Mailing List](https://dev.lucee.org); general app developer support
 - [Lucee Lang Forum](http://lang.lucee.org/); hacking on Lucee itself
 - [Lucee Bug Tracker](https://luceeserver.atlassian.net/projects/LDEV/issues)
 
