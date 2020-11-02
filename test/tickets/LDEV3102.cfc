@@ -39,7 +39,7 @@ component extends = "org.lucee.cfml.test.LuceeTestCase" {
 
 		var drivers = [
 			  {label="MSSQL", datasource=getDatasource("mssql")}
-//			, {label="JDDS", datasource=getDatasource("jtds")}
+			, {label="JDDS", datasource=getDatasource("jtds")}
 		];
 
 		for( var data in drivers ){
