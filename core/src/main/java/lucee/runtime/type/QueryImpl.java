@@ -301,6 +301,16 @@ public class QueryImpl implements Query, Objects, QueryResult {
 						if( resultsetCount == 1 && !hasPossibleGeneratedKeys ){
 							hasPossibleGeneratedKeys = true;
 						}
+						/*
+						 * When using the MSSQL driver, we need to make sure to go through all the recordset objects
+						 * because there may be exceptions or additional SQL recordsets that need to be processed.
+						 */
+						if( DataSourceUtil.isMSSQLDriver(dc) ){
+							while( stat.getMoreResults() ){ 
+								// we just need to advance through all the resultsets, we can ignore
+								// the results since we only return the first resultset
+							}
+						}
 						break;
 					}
 
@@ -318,7 +328,24 @@ public class QueryImpl implements Query, Objects, QueryResult {
 					hasResult = stat.getMoreResults();
 				}
 				catch (Throwable t) {
-					ExceptionUtil.rethrowIfNecessary(t);
+					/*
+					 * The JTDS driver (and possibly other drivers) throw exceptions as soon
+					 * as the query is executed, however the MSSQL driver will delay throwing
+					 * the execution until you try to request the recordset.
+					 * 
+					 * So we need to check if a SQLException is being thrown and if so, we need
+					 * to rethrow it.
+					 * 
+					 * NOTE — I'm not sure why exceptions here were generally being thrown away.
+					 *        Seems like an exception should be re-thrown in any use cases, but
+					 *        since there may be reasons some drivers are ignoring exceptions, we
+					 *        only rethrow if the MSSQL driver is generating SQL exceptions.
+					 */ 
+					if( DataSourceUtil.isMSSQLDriver(dc) && (t instanceof SQLException) ){
+						throw t;
+					} else {
+						ExceptionUtil.rethrowIfNecessary(t);
+					}
 					break;
 				}
 			}
