@@ -252,6 +252,14 @@ public class TimeZoneUtil {
 	public static TimeZone toTimeZone(String strTimezone) throws ExpressionException {
 		TimeZone tz = toTimeZone(strTimezone, null);
 		if (tz != null) return tz;
+<<<<<<< HEAD
+		throw new ExpressionException("Can't cast value [" + strTimezone + "] to a TimeZone", "supported TimeZones are: [" + getSupportedTimeZonesAsString() +"]");
+=======
+<<<<<<< HEAD
 		throw new ExpressionException("Can't cast value [" + strTimezone + "] to a TimeZone", "supported TimeZones are: [" + getSupportedTimeZonesAsString() + "]");
+=======
+		throw new ExpressionException("Can't cast value [" + strTimezone + "] to a TimeZone", "supported TimeZones are: [" + getSupportedTimeZonesAsString() +"]");
+>>>>>>> upstream/master
+>>>>>>> a9e6ea89c89f47a406d8ce4d11d2da1087af5a7c
 	}
 }

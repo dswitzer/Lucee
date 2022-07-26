@@ -662,8 +662,17 @@ public class OSGiUtil {
 
 			// no download available!
 			if (code != 200) {
+<<<<<<< HEAD
 				final String msg = "Download bundle failed for [" + symbolicName + "] in version [" + symbolicVersion + "] from [" + updateUrl
 						+ "], please download manually and copy to [" + jarDir + "]";
+=======
+				final String msg = "Lucee is not able to download the bundle for [" + symbolicName + "] in version [" + symbolicVersion + "] from " + updateUrl
+						+ ", please download manually and copy to [" + jarDir + "]";
+<<<<<<< HEAD
+>>>>>>> Fix misspelling for dep download error message
+=======
+>>>>>>> upstream/master
+>>>>>>> a9e6ea89c89f47a406d8ce4d11d2da1087af5a7c
 				log(Logger.LOG_ERROR, msg);
 				conn.disconnect();
 				throw new IOException(msg);

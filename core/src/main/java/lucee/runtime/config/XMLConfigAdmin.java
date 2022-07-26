@@ -3858,7 +3858,15 @@ public final class XMLConfigAdmin {
 
 			// no download available!
 			if (code != 200) {
+<<<<<<< HEAD
 				final String msg = "Lucee Core download failed (response status:" + code + ") the core for version [" + version.toString() + "] from " + updateUrl
+=======
+				final String msg = "Lucee is not able to download (response status:" + code + ") the core for version [" + version.toString() + "] from " + updateUrl
+<<<<<<< HEAD
+>>>>>>> Fix misspelling for dep download error message
+=======
+>>>>>>> upstream/master
+>>>>>>> a9e6ea89c89f47a406d8ce4d11d2da1087af5a7c
 						+ ", please download it manually and copy to [" + patchDir + "]";
 				// log.debug("Admin", msg);
 				conn.disconnect();
