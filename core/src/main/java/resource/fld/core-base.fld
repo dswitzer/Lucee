@@ -13038,7 +13038,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
 		<name>collectionSome</name>
 		<class>lucee.runtime.functions.closure.Some</class>
 		<keywords>iterator</keywords>
-		<description>This function calls a given closure/function with every element in a given collection and returns true, if one of the closure calls returns true.</description>
+		<description>This function calls a given closure/function and returns true if any of the values in a given collection cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more items. If all items fail the closure call, then false is returned.</description>
 		<argument>
 			<name>collection</name>
 			<alias>object</alias>
@@ -13078,7 +13078,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
 		<class>lucee.runtime.functions.arrays.ArraySome</class>
 		<member-name>some</member-name>
 		<keywords>array,iterator</keywords>
-		<description>This function calls a given closure/function with every element in a given array and returns true, if one of the closure calls returns true.</description>
+		<description>This function calls a given closure/function and returns true if any of the values in a given array cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more items. If all items fail the closure call, then false is returned.</description>
 		<argument>
 			<name>array</name>
 			<alias>object</alias>
@@ -13119,7 +13119,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
 		<class>lucee.runtime.functions.list.ListSome</class>
 		<member-name>listSome</member-name>
 		<keywords>list,iterator</keywords>
-		<description>This function calls a given closure/function with every element in a given string list and returns true, if one of the closure calls returns true.</description>
+		<description>This function calls a given closure/function and returns true if any of the values in a given list cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more items. If all items fail the closure call, then false is returned.</description>
 		<argument>
 			<name>list</name>
 			<alias>string</alias>
@@ -13181,7 +13181,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
 		<class>lucee.runtime.functions.struct.StructSome</class>
 		<member-name>some</member-name>
 		<keywords>struct,iterator</keywords>
-		<description>This function calls a given closure/function with every element in a given struct and returns true, if one of the closure calls returns true.</description>
+		<description>This function calls a given closure/function and returns true if any of the values in a given struct cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more items. If all items fail the closure call, then false is returned.</description>
 		<argument>
 			<name>struct</name>
 			<alias>structure,object</alias>
@@ -13221,7 +13221,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
 		<class>lucee.runtime.functions.query.QuerySome</class>
 		<member-name>some</member-name>
 		<keywords>query,iterator</keywords>
-		<description>This function calls a given closure/function with every element in a given query and returns true, if one of the closure calls returns true.</description>
+		<description>This function calls a given closure/function and returns true if any of the rows in a given query cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more rows. If all rows fail the closure call, then false is returned.</description>
 		<argument>
 			<name>query</name>
 			<alias>object</alias>
@@ -14901,7 +14901,7 @@ You can find a list of all available timezones in the Lucee administrator (Setti
     		<name>StringSome</name>
     		<class>lucee.runtime.functions.string.StringSome</class>
 			<member-name>some</member-name>
-    		<description>This function calls a given closure/function with every element in a given string and returns true, if one of the closure calls returns true.</description>
+    		<description>This function calls a given closure/function and returns true if any of the characters in a given string cause the closure call to return true. The logic is short-circuited, so the first truthy match will stop processing more characters. If all characters fail the closure call, then false is returned.</description>
 			<introduced>6.0.0.126</introduced>
         	<argument>
     			<name>string</name>
